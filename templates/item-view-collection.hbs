@@ -1,0 +1,17 @@
+<h3>TODO List</h3>
+{{#if items}}
+    get to work, {{items.length}} tasks left
+{{else}}
+    No items
+{{/if}}
+
+<br>
+
+<ul>
+{{#each items key="name" as |person|}}
+    <li>{{person.name}}</li>
+{{/each}}
+</ul>
+
+<button class="add">Add task</button>
+<button class="remove">Remove task</button>
