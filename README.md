@@ -4,7 +4,7 @@ This is an experiment to make Marionette work with HTMLBars.
 
 ## Features
 
-- Lazy efficient rerendering *[Working]*
+- Lazy efficient rerendering 
 
 ```
 let View = HTMLBarsView.extend({
@@ -25,7 +25,7 @@ let View = HTMLBarsView.extend({
 });
 ```
 
-- Actions autobinding *[In progress]*
+- Actions autobinding 
 
 ```<button {{action "click" "remove"}}>Remove item</button>``` 
 
@@ -38,7 +38,7 @@ let View = HTMLBarsView.extend({
 ```
 
 
-- UI Autobinding *[In progress]*
+- UI Autobinding 
 
 ```<section {{ui "sectionElement"}}>My Element</section>```
 ```
