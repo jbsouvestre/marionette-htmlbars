@@ -1,4 +1,7 @@
 import { bind } from 'underscore';
+import $ from 'jquery';
+
+const DELEGATE_NS = '.delegateEvents';
 
 function getHandlerMethod(handlerName, context){
     return context[handlerName];
@@ -11,7 +14,8 @@ export default {
         let handlerName = params[1];
 
         let method = getHandlerMethod(handlerName, view);
+        let cid = view.cid;
 
-        view.delegate(eventName, node.element, bind(method, view));
+        $(node.element).on(`${eventName}${DELEGATE_NS}${cid}`, bind(method, view));
     }
 };

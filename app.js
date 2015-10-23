@@ -31,7 +31,6 @@ App.on('start', () => {
     layout.render();
 });
 
-
 $(()=> {
     App.start();
 });

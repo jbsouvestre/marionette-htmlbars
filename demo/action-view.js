@@ -6,5 +6,9 @@ export default HTMLBarsView.extend({
     message: 'Hello world',
     saySomething() {
         alert(this.message);
+    },
+    setProgress() {
+        let random = Math.ceil( Math.random() * 100 );
+        this.ui.progressBar.attr('style', `width: ${random}%`);
     }
 });

@@ -1,3 +1,18 @@
 <div>
     Some text and <button class="btn btn-default" {{action "click" "saySomething"}}>an action</button>
+    <hr>
+
+    <div class="row">
+        <div class="col-xs-3">
+            <button class="btn btn-primary" {{action "click" "setProgress"}}>
+                Set progress bar to random value
+            </button>
+        </div>
+        
+        <div class="col-xs-8 col-xs-offset-1">
+            <div class="progress">
+                <div class="progress-bar" {{ui "progressBar"}}></div>
+            </div>
+        </div>
+    </div>
 </div>
