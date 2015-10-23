@@ -14,8 +14,6 @@ export default {
     setupState(state, env, scope, params, hash){
     },
     render (node, env, scope, params, hash) {
-        console.info('--------RENDER-------');
-            
         let view = env.view; 
 
         let regionName = getRegionName(hash);
@@ -23,8 +21,5 @@ export default {
         view.addRegion(regionName, { 
             selector: $(node.element)
         });
-
-        console.log({node, env, scope, params, hash});
-        console.info('--------END RENDER-------');
     }
 }

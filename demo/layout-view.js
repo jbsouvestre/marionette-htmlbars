@@ -4,7 +4,8 @@ import LayoutViewTemplate from 'raw!../templates/layout-view.hbs';
 import LayoutViewChildViewTemplate from 'raw!../templates/layout-view-child-view.hbs';
 
 let SubRegionOne = HTMLBarsView.extend({
-    template: LayoutViewChildViewTemplate
+    template: LayoutViewChildViewTemplate,
+    className: 'well'
 });
 
 const REGION_NAME = 'childRegion';
