@@ -1,26 +1,32 @@
 import _ from 'underscore';
 import $ from 'jquery';
 import Backbone from 'backbone';
-import Marionette, { Application, Renderer } from 'backbone.marionette';
+import Marionette, { Application } from 'backbone.marionette';
+import AppTemplate from 'raw!./templates/app.hbs';
 
-import render from './src/render';
-import './src/compat';
+import { ItemView, ItemViewCollection,  LayoutView } from './demo/demo';
 
-import { ItemView, ItemViewCollection } from './demo/demo';
+let App = new Application();
 
-Renderer.render = render;
-
-
-let App = new Application({
+let Layout = Marionette.LayoutView.extend({
+    el: '#app',
+    template: AppTemplate,
     regions: {
         itemView:                   '#item-view',
-        itemViewCollection:         '#item-view-collection'
+        itemViewCollection:         '#item-view-collection',
+        layoutView:                 '#layout-view'
+    },
+    onRender() {
+        this.itemView.show(new ItemView());
+        this.itemViewCollection.show( new ItemViewCollection() );
+        this.layoutView.show( new LayoutView() );
     }
 });
 
+let layout = new Layout();
+
 App.on('start', () => {
-    App.itemView.show(new ItemView());
-    App.itemViewCollection.show( new ItemViewCollection() );
+    layout.render();
 });
 
 

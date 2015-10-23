@@ -8,9 +8,6 @@ import helpers from './helpers/helpers';
 var marionetteHooks = extend({}, hooks);
 
 extend(marionetteHooks.keywords, keywords );
-//marionetteHooks.keywords = keywords;
-
-console.log(marionetteHooks);
 
 export default {
     dom: new DOMHelper.default(),

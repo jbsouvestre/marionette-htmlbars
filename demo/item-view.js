@@ -1,5 +1,5 @@
 import { Model } from 'backbone';
-import { ItemView } from 'backbone.marionette';
+import HTMLBarsView from '../src/HTMLBarsView';
 
 let time = 0;
 
@@ -11,7 +11,7 @@ function updateTime(){
     model.set('time', time++);
 }
 
-export default ItemView.extend({
+export default HTMLBarsView.extend({
     model,
     template: require('raw!../templates/item-view.hbs'),
     modelEvents: {

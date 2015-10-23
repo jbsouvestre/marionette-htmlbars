@@ -1,6 +1,6 @@
 import { uniqueId } from 'underscore';
 import { Collection } from 'backbone';
-import { ItemView } from 'backbone.marionette';
+import HTMLBarsView from '../src/HTMLBarsView';
 
 let models = [
     {name: 'Write code'},
@@ -13,7 +13,7 @@ let collection = new Collection(
     models
 );
 
-export default ItemView.extend({
+export default HTMLBarsView.extend({
     collection,
     collectionEvents: {
         'add': 'render',
