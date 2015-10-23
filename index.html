@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Marionette-htmlbars : An experiment to make Marionette.js work with HTMLBars">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Marionette-htmlbars</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jbsouvestre/marionette-htmlbars">View on GitHub</a>
+
+          <h1 id="project_title">Marionette-htmlbars</h1>
+          <h2 id="project_tagline">An experiment to make Marionette.js work with HTMLBars</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jbsouvestre/marionette-htmlbars/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jbsouvestre/marionette-htmlbars/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="marionette-htmlbars" class="anchor" href="#marionette-htmlbars" aria-hidden="true"><span class="octicon octicon-link"></span></a>Marionette HTMLBars</h1>
+
+<p>This is an experiment to make Marionette work with HTMLBars.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Lazy efficient rerendering </li>
+</ul>
+
+<pre><code>let View = HTMLBarsView.extend({
+    collectionEvents: {
+        'sort': 'render'
+    } 
+});
+</code></pre>
+
+<ul>
+<li>Region autobinding <em>[Partially working]</em>
+</li>
+</ul>
+
+<p><code>&lt;div {{region name="regionName"}}&gt;&lt;/div&gt;</code> </p>
+
+<pre><code>let View = HTMLBarsView.extend({
+    onRender() {
+        this.showChildView('regionName', new OtherView());
+    }
+});
+</code></pre>
+
+<ul>
+<li>Actions autobinding </li>
+</ul>
+
+<p><code>&lt;button {{action "click" "remove"}}&gt;Remove item&lt;/button&gt;</code> </p>
+
+<pre><code>let View = HTMLBarsView.extend({
+    remove() {
+        this.model.remove();
+    } 
+});
+</code></pre>
+
+<ul>
+<li>UI Autobinding </li>
+</ul>
+
+<p><code>&lt;section {{ui "sectionElement"}}&gt;My Element&lt;/section&gt;</code></p>
+
+<pre><code>let View = HTMLBarsView.extend({
+    onSomeTrigger() {
+        this.ui.sectionElemnt.toggle();
+    }
+});
+</code></pre>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<pre><code>npm install
+npm run build
+live-server
+</code></pre>
+
+<p>Navigate to 127.0.0.1:8080 </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Marionette-htmlbars maintained by <a href="https://github.com/jbsouvestre">jbsouvestre</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
