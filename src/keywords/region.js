@@ -8,12 +8,11 @@ function getRegionName(hash){
     return hash.name;
 }
 
+console.log('REGION');
+
 export default {
-    willRender(){
-    },
-    setupState(state, env, scope, params, hash){
-    },
     render (node, env, scope, params, hash) {
+        console.info('[RENDER]', arguments);
         let view = env.view; 
 
         let regionName = getRegionName(hash);
@@ -22,4 +21,4 @@ export default {
             selector: $(node.element)
         });
     }
-}
+};

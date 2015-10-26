@@ -1,4 +1,4 @@
-import HTMLBarsView from '../src/HTMLBarsView';
+import HTMLBarsView from 'htmlbars-view';
 import ActionViewTemplate from 'raw!../templates/action-view.hbs';
 
 export default HTMLBarsView.extend({

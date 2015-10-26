@@ -2,10 +2,11 @@
 /*jshint node: true*/
 
 module.exports = {
+    context: __dirname + '/demo/js',
     entry: './app',
     devtools: 'source-map',
     output: {
-        path: __dirname,
+        path: __dirname + '/demo',
         filename: 'build.js'
     },
     module: {
@@ -13,13 +14,11 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel'
-        }, {
-            test: /\.json/
         }]
     },
     resolve: {
         alias: {
-            //htmlbars: './htmlbars/packages/htmlbars/lib/main.js'
+            'htmlbars-view': '../../src/HTMLBarsView.js'
         }
     }
 };

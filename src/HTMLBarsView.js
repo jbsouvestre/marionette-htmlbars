@@ -1,16 +1,14 @@
-import Marionette, { LayoutView, Renderer } from 'backbone.marionette';
+import { LayoutView, Renderer } from 'backbone.marionette';
 import render from './render';
 
 Renderer.render = render;
 
-const HTMLBarsView = LayoutView.extend({
+export default LayoutView.extend({
     attachElContent(node) {
-        if(node){
+        if(node) {
             this.$el.html(node);
             return this;
         }
         return false;
     }
 });
-
-export default HTMLBarsView;

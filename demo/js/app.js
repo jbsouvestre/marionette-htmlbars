@@ -2,9 +2,9 @@ import _ from 'underscore';
 import $ from 'jquery';
 import Backbone from 'backbone';
 import Marionette, { Application } from 'backbone.marionette';
-import AppTemplate from 'raw!./templates/app.hbs';
+import AppTemplate from 'raw!../templates/app.hbs';
 
-import { ItemView, ItemViewCollection,  LayoutView, ActionView } from './demo/demo';
+import { ItemView, ItemViewCollection,  LayoutView, ActionView } from './demo';
 
 let App = new Application();
 

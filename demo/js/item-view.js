@@ -1,5 +1,5 @@
 import { Model } from 'backbone';
-import HTMLBarsView from '../src/HTMLBarsView';
+import HTMLBarsView from 'htmlbars-view';
 
 let time = 0;
 

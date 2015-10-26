@@ -7,13 +7,15 @@ export default {
 
     },
 
-    childEnv(state, env){},
+    childEnv(state, env){
+
+    },
 
     isStable(lastState, nextState){
 
     },
 
-    isEmpty() {
+    isEmpty(state) {
 
     }
 };

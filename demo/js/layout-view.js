@@ -1,4 +1,4 @@
-import HTMLBarsView from '../src/HTMLBarsView';
+import HTMLBarsView from 'htmlbars-view';
 
 import LayoutViewTemplate from 'raw!../templates/layout-view.hbs';
 import LayoutViewChildViewTemplate from 'raw!../templates/layout-view-child-view.hbs';
@@ -13,6 +13,8 @@ const REGION_NAME = 'childRegion';
 export default HTMLBarsView.extend({
     template: LayoutViewTemplate,
     onRender() {
-        this.showChildView(REGION_NAME, new SubRegionOne());
+        if(this.getRegion(REGION_NAME)){
+            this.showChildView(REGION_NAME, new SubRegionOne());
+        }
     }
 });

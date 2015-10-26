@@ -1,8 +1,9 @@
-import HTMLBars from '../node_modules/htmlbarsify/node_modules/htmlbars/dist/cjs/htmlbars.js';
+import { compile } from '../node_modules/htmlbars/dist/cjs/htmlbars';
 import assign from 'object-assign';
 import ENV from './env';
 
-const HTMLBarsNodePrivate = Symbol('__HTMLBarsNode');
+
+const HTMLBarsNodePrivate = '__HTMLBarsNode';
 
 function render(template, data, context){
     let node = context[HTMLBarsNodePrivate];
@@ -13,10 +14,7 @@ function render(template, data, context){
         node.rerender(env, data);
         return false;
     } else {
-        let tpl = HTMLBars.compile(template);
-        
-        tpl.meta = context;
-
+        let tpl = compile(template);
         node = tpl.render(data, env);
         context[HTMLBarsNodePrivate] = node;        
         return node.fragment;

@@ -1,6 +1,6 @@
 import { uniqueId } from 'underscore';
 import { Collection } from 'backbone';
-import HTMLBarsView from '../src/HTMLBarsView';
+import HTMLBarsView from 'htmlbars-view';
 
 let models = [
     {name: 'Write code'},
