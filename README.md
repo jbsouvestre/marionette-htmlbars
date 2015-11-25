@@ -70,14 +70,14 @@ let View = ItemView.extend({
 - UI Autobinding 
 
 ```html
-<section {{ui "sectionElement"}}>My Element</section>```
+<section {{ui "sectionElement"}}>My Element</section>
 ```
 ```js
 import { ItemView } from 'marionette-htmlbars';
 
-let View = HTMLBarsView.extend({
+let View = ItemView.extend({
     onSomeTrigger() {
-        this.ui.sectionElemnt.toggle();
+        this.ui.sectionElement.toggle();
     }
 });
 ```
