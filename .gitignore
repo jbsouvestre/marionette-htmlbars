@@ -1,4 +1,4 @@
-build.js
+demo/build.js
 *.map
 *.log
 /node_modules/

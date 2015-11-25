@@ -1,6 +1,6 @@
 import { uniqueId } from 'underscore';
 import { Collection } from 'backbone';
-import HTMLBarsView from 'htmlbars-view';
+import { ItemView } from 'marionette-htmlbars';
 
 let models = [
     {name: 'Write code'},
@@ -13,8 +13,11 @@ let collection = new Collection(
     models
 );
 
-export default HTMLBarsView.extend({
+export default ItemView.extend({
     collection,
+    initialize() {
+        setInterval(this.shuffleCollection.bind(this), 1000);
+    },
     collectionEvents: {
         'add': 'render',
         'remove': 'render',
@@ -32,6 +35,9 @@ export default HTMLBarsView.extend({
         this.collection.remove( this.collection.first() );
     },
     onClickReorder() {
+        this.shuffleCollection();
+    },
+    shuffleCollection() {
         this.collection.reset( this.collection.shuffle() , { silent: true });
         this.collection.trigger('sort');
     },

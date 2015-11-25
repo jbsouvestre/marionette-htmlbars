@@ -6,6 +6,8 @@ import AppTemplate from 'raw!../templates/app.hbs';
 
 import { ItemView, ItemViewCollection,  LayoutView, ActionView } from './demo';
 
+console.log(ItemView.prototype);
+
 let App = new Application();
 
 let Layout = Marionette.LayoutView.extend({

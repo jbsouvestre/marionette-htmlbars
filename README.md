@@ -1,24 +1,49 @@
 # Marionette HTMLBars
 
-This is an experiment to make Marionette work with HTMLBars.
+This is an experiment to make Marionette work with HTMLBars. This repository is a work in progress. 
+
+## Install
+    npm install marionette-htmlbars
+
+## Usage
+```js
+import { ItemView } from 'marionette-htmlbars'
+
+let MyHTMLBarsView = ItemView.extend({
+    // ...
+});
+```
+
+Additionally, you can patch all Marionette's Views prototypes 
+```js
+require('marionette-htmlbars')();
+```
 
 ## Features
 
 - Lazy efficient rerendering 
 
-```
-let View = HTMLBarsView.extend({
+```js
+import { ItemView } from 'marionette-htmlbars';
+
+let View = ItemView.extend({
     collectionEvents: {
         'sort': 'render'
     } 
 });
 ```
 
+![collectionReorder](http://gfycat.com/ShabbySomeFeline)
+
 - Region autobinding *[Partially working]*
 
-```<div {{region name="regionName"}}></div>``` 
-```
-let View = HTMLBarsView.extend({
+```html
+<div {{region name="regionName"}}></div>
+``` 
+```js
+import { LayoutView } from 'marionette-htmlbars';
+
+let View = LayoutView.extend({
     onRender() {
         this.showChildView('regionName', new OtherView());
     }
@@ -27,10 +52,14 @@ let View = HTMLBarsView.extend({
 
 - Actions autobinding 
 
-```<button {{action "click" "remove"}}>Remove item</button>``` 
+```html
+<button {{action "click" "remove"}}>Remove item</button>
+``` 
 
-```
-let View = HTMLBarsView.extend({
+```js
+import { ItemView } from 'marionette-htmlbars';
+
+let View = ItemView.extend({
     remove() {
         this.model.remove();
     } 
@@ -40,8 +69,12 @@ let View = HTMLBarsView.extend({
 
 - UI Autobinding 
 
-```<section {{ui "sectionElement"}}>My Element</section>```
+```html
+<section {{ui "sectionElement"}}>My Element</section>```
 ```
+```js
+import { ItemView } from 'marionette-htmlbars';
+
 let View = HTMLBarsView.extend({
     onSomeTrigger() {
         this.ui.sectionElemnt.toggle();
@@ -49,9 +82,10 @@ let View = HTMLBarsView.extend({
 });
 ```
 
-## Demo
+## Demo / Development
     npm install
     npm run build
     live-server
 
-Navigate to 127.0.0.1:8080 
+Navigate to the `/demo` folder
+

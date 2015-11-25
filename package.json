@@ -1,8 +1,8 @@
 {
   "name": "marionette-htmlbars",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "src/marionette-htmlbars.js",
   "scripts": {
     "watch": "webpack --config webpack.config.js --progress --profile --colors --display-error-details --watch",
     "build": "webpack --config webpack.config.js --progress --profile --colors --display-error-details"

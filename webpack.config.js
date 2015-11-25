@@ -1,5 +1,8 @@
 /*jshint strict:false*/
 /*jshint node: true*/
+var package = require('./package.json');
+
+console.log(__dirname + package.main);
 
 module.exports = {
     context: __dirname + '/demo/js',
@@ -18,7 +21,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'htmlbars-view': '../../src/HTMLBarsView.js'
-        }
+            'marionette-htmlbars': package.main
+        },
+        root: __dirname
     }
 };

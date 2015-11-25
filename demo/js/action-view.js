@@ -1,7 +1,7 @@
-import HTMLBarsView from 'htmlbars-view';
+import { ItemView } from 'marionette-htmlbars';
 import ActionViewTemplate from 'raw!../templates/action-view.hbs';
 
-export default HTMLBarsView.extend({
+export default ItemView.extend({
     template: ActionViewTemplate,
     message: 'Hello world',
     saySomething() {
