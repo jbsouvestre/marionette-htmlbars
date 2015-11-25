@@ -33,7 +33,7 @@ let View = ItemView.extend({
 });
 ```
 
-![collectionReorder](http://gfycat.com/ShabbySomeFeline)
+![collectionReorder](https://raw.githubusercontent.com/jbsouvestre/marionette-htmlbars/master/demo/img/collection-demo.gif)
 
 - Region autobinding *[Partially working]*
 
