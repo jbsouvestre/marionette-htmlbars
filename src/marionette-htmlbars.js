@@ -7,12 +7,12 @@
 import { Renderer } from 'backbone.marionette';
 
 import render from './render';
-import { ItemView, LayoutView } from './views/views';
+import { ItemView, LayoutView, CollectionView } from './views/views';
 import patchViewsRenderers from './patch-views';
 
 Renderer.render = render;
 
 export default patchViewsRenderers;
 export {
-	ItemView, LayoutView
+	ItemView, LayoutView, CollectionView
 };

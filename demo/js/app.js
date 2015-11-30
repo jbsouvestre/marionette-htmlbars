@@ -4,7 +4,7 @@ import Backbone from 'backbone';
 import Marionette, { Application } from 'backbone.marionette';
 import AppTemplate from 'raw!../templates/app.hbs';
 
-import { ItemView, ItemViewCollection,  LayoutView, ActionView } from './demo';
+import { ItemView, ItemViewCollection,  LayoutView, ActionView, CollectionView} from './demo';
 
 console.log(ItemView.prototype);
 
@@ -17,13 +17,15 @@ let Layout = Marionette.LayoutView.extend({
         itemView:                   '#item-view',
         itemViewCollection:         '#item-view-collection',
         layoutView:                 '#layout-view',
-        actionView:                 '#action-view'
+        actionView:                 '#action-view',
+        collectionView:             '#collection-view'
     },
     onRender() {
         this.itemView.show(new ItemView());
         this.itemViewCollection.show( new ItemViewCollection() );
         this.layoutView.show( new LayoutView() );
         this.actionView.show( new ActionView() );
+        this.collectionView.show( new CollectionView() );
     }
 });
 
