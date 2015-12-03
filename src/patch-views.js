@@ -1,9 +1,10 @@
-import extend from 'underscore';
+import assign from 'object-assign';
+import Marionette from 'backbone.marionette';
 
-import { ItemView } from 'backbone.marionette';
-
-import { ItemViewProtoProps } from './views/views';
+import HTMLBarsViews from './views/views';
 
 export default function patchViews () {
-    extend(ItemView.prototype, ItemViewProtoProps);
+    Object.keys(HTMLBarsViews).forEach( 
+        viewKey => assign(Marionette[viewKey].prototype, HTMLBarsViews[viewKey].prototype)
+    );
 }

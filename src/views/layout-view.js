@@ -1,9 +1,3 @@
-export default {
-    attachElContent(node) {
-        if(node) {
-            this.$el.html(node);
-            return this;
-        }
-        return false;
-    }
-};
+import ItemView from './item-view';
+
+export default ItemView;
