@@ -1,9 +1,9 @@
 export default {
     attachElContent(node) {
-        if(node) {
-            this.$el.html(node);
-            return this;
+        // is the view is already rendered
+        if(this.isRendered){
+            return;
         }
-        return false;
+        this.$el.html(node);
     }
 };

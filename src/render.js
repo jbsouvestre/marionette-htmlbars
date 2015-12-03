@@ -1,22 +1,20 @@
 import { compile } from '../node_modules/htmlbars/dist/cjs/htmlbars';
 import assign from 'object-assign';
+import { getNode, setNode } from './utils/get-set-node';
 import ENV from './env';
 
-
-const HTMLBarsNodePrivate = '__HTMLBarsNode';
-
 function render(template, data, context){
-    let node = context[HTMLBarsNodePrivate];
 
     let env = assign({view: context}, ENV);
     
-    if(node) {
-        node.rerender(env, data);
-        return false;
+    if(context.isRendered){
+        getNode(context).rerender(env, data);
     } else {
-        let tpl = compile(template);
-        node = tpl.render(data, env);
-        context[HTMLBarsNodePrivate] = node;        
+        let compiled = compile(template);
+        let node = compiled.render(data, env);
+
+        setNode(context, node);
+        
         return node.fragment;
     }
 }
