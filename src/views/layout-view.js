@@ -1,3 +1,7 @@
-import ItemView from './item-view';
+import HTMLBarsRegionManager from '../regions/htmlbars-region-manager';
 
-export default  ItemView;
+export default {
+    getRegionManager() {
+        return new HTMLBarsRegionManager();
+    }
+};
