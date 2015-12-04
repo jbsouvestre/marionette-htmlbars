@@ -1,5 +1,11 @@
 function getNode(view) {
-    return view.node;
+    if( view.node ){
+        return view.node;
+    }
+
+    if( view.$el ){
+        return view.$el.get(0);
+    }
 }
 
 

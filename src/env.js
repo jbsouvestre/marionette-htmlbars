@@ -7,6 +7,8 @@ import helpers from './helpers/helpers';
 
 var marionetteHooks = extend({}, hooks);
 
+console.log(marionetteHooks);
+
 extend(marionetteHooks.keywords, keywords );
 
 export default {
